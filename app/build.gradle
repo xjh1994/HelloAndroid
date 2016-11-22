@@ -1,24 +1,84 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+
+    signingConfigs {
+        release {
+            storeFile file('helloandroid.jks')
+            storePassword project.KEYSTORE_PASSWORD
+            keyAlias project.KEYSTORE_NAME
+            keyPassword project.KEY_PASSWORD
+        }
+    }
+
+    compileSdkVersion rootProject.ext.versions.compileSdkVersion
+    buildToolsVersion rootProject.ext.versions.buildToolsVersion
+
     defaultConfig {
         applicationId "com.xjh1994.helloandroid"
-        minSdkVersion 15
-        targetSdkVersion 24
+        minSdkVersion rootProject.ext.versions.minSdkVersion
+        targetSdkVersion rootProject.ext.versions.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi'// , 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
     }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            signingConfig signingConfigs.release
+
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // 输出apk名称为app_name_v1.0_flavor.apk
+                        def fileName
+                        if (variant.buildType.name == "release") {
+                            fileName = "v${defaultConfig.versionName}.apk"
+//                            fileName = "v${defaultConfig.versionName}_${variant.productFlavors[0].name}.apk"
+                        } else {
+                            fileName = "v${defaultConfig.versionName}_debug.apk"
+//                            fileName = "v${defaultConfig.versionName}_${variant.productFlavors[0].name}_debug.apk"
+                        }
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
         }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'aar'
     }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile project(":core")
+    compile project(":ui")
 }
