@@ -30,5 +30,7 @@ dependencies {
     compile rootProject.ext.dependencies['eventbus3']
     compile rootProject.ext.dependencies['logger']
 
+    compile rootProject.ext.dependencies['FlycoTabLayout_Lib']
+
     compile rootProject.ext.dependencies['umeng']
 }
