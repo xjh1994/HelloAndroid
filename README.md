@@ -14,7 +14,7 @@ Add it in your root build.gradle at the end of repositories:
 			maven { url 'https://jitpack.io' }
 		}
 	}
-**Step 2**. Add the dependency  [latest_release](/xjh1994/HelloAndroid/releases)
+**Step 2**. Add the dependency  [latest_release](https://github.com/xjh1994/HelloAndroid/releases)
 
 	dependencies {
 	        compile 'com.github.xjh1994:HelloAndroid:{latest_release}'
