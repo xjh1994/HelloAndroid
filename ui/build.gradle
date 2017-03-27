@@ -20,7 +20,14 @@ android {
     }
 }
 
+repositories {
+    flatDir {
+        dirs 'libs/aar'
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile rootProject.ext.dependencies["appcompat"]
+
 }

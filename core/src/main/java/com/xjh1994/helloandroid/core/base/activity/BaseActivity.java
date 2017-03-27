@@ -4,7 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBar;
+import android.view.MenuItem;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
@@ -13,15 +14,26 @@ import com.xjh1994.helloandroid.core.util.ActivityUtils;
 import com.xjh1994.helloandroid.core.util.ToastUtils;
 import com.xjh1994.helloandroid.core.util.analysis.AnalysisUtils;
 
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.ButterKnife;
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+import rx.Subscription;
 
 /**
  * Created by xjh1994 on 2016/8/24.
  */
 
-public abstract class BaseActivity extends AppCompatActivity implements IBaseActivity {
+public abstract class BaseActivity extends SwipeBackActivity implements IBaseActivity {
 
     protected InputMethodManager inputMethodManager;
+
+    protected SwipeBackLayout mSwipeBackLayout;
+
+    private boolean eventBusEnabled = false;
+
+    protected Subscription mSubscription;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,8 +58,38 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseAct
             setContentView(getLayoutResId());
         }
         ButterKnife.bind(this);
+
+        if (eventBusEnabled) {
+            EventBus.getDefault().register(this);
+        }
+
+        mSwipeBackLayout = getSwipeBackLayout();
+
         initView();
         initData();
+    }
+
+    public void setBackTitle() {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setElevation(0);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowHomeEnabled(true);
+        }
+    }
+
+    public void setEventBusEnabled() {
+        this.eventBusEnabled = true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:// 点击返回图标事件
+                this.finish();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     /**
@@ -71,7 +113,15 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseAct
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
+
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
+
+        if (mSubscription != null && !mSubscription.isUnsubscribed()) {
+            mSubscription.unsubscribe();
+        }
+
         ActivityUtils.getInstance().finishActivity(this);
     }
 

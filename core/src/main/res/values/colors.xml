@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="hello_colorPrimary">#3F51B5</color>
+
+    <color name="colorPrimary">@color/colorBlue</color>
+    <color name="colorPrimaryDark">@color/colorBlue</color>
+    <color name="colorAccent">#49C120</color>
+    <color name="primaryTextColor">#DE000000</color>
+    <color name="secondaryTextColor">#8A000000</color>
+
+    <color name="colorBlue">#2196f3</color>
 </resources>
