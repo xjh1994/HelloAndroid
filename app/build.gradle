@@ -73,7 +73,7 @@ android {
 
 repositories {
     flatDir {
-        dirs 'libs/aar'
+        dirs 'libs'
     }
 }
 
