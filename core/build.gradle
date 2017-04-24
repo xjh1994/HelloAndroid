@@ -35,7 +35,7 @@ dependencies {
     compile rootProject.ext.dependencies['appcompat']
     compile rootProject.ext.dependencies['support']
 
-    compile rootProject.ext.dependencies['butterknife8']
+    compile rootProject.ext.dependencies['butterknife']
     compile rootProject.ext.dependencies['eventbus3']
     compile rootProject.ext.dependencies['logger']
 

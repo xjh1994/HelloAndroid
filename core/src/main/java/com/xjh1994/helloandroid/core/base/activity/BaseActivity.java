@@ -122,6 +122,8 @@ public abstract class BaseActivity extends SwipeBackActivity implements IBaseAct
             mSubscription.unsubscribe();
         }
 
+        ButterKnife.unbind(this);
+
         ActivityUtils.getInstance().finishActivity(this);
     }
 
