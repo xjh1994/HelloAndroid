@@ -1,7 +1,9 @@
-apply plugin: 'com.android.library'
-apply plugin: 'maven'
+apply plugin: 'com.android.library' 
+apply plugin: 'com.github.dcendents.android-maven'  
+ 
+group='com.github.xjh1994'
 
-version="0.2.2"
+version="0.2.3"
 
 android {
 
@@ -74,4 +76,3 @@ task sourcesJar(type: Jar) {
 artifacts {
     archives sourcesJar
 }
-
