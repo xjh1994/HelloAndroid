@@ -17,6 +17,7 @@ import com.xjh1994.helloandroid.core.util.analysis.AnalysisUtils;
 import org.greenrobot.eventbus.EventBus;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 import rx.Subscription;
@@ -34,6 +35,8 @@ public abstract class BaseActivity extends SwipeBackActivity implements IBaseAct
     private boolean eventBusEnabled = false;
 
     protected Subscription mSubscription;
+
+    protected Unbinder mUnbinder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,7 +60,7 @@ public abstract class BaseActivity extends SwipeBackActivity implements IBaseAct
         if (getLayoutResId() != 0) {
             setContentView(getLayoutResId());
         }
-        ButterKnife.bind(this);
+        mUnbinder = ButterKnife.bind(this);
 
         if (eventBusEnabled) {
             EventBus.getDefault().register(this);
@@ -122,7 +125,7 @@ public abstract class BaseActivity extends SwipeBackActivity implements IBaseAct
             mSubscription.unsubscribe();
         }
 
-        ButterKnife.unbind(this);
+        mUnbinder.unbind();
 
         ActivityUtils.getInstance().finishActivity(this);
     }

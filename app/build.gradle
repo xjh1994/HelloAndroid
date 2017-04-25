@@ -80,5 +80,4 @@ repositories {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(":core")
-    compile project(":ui")
 }
