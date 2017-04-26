@@ -59,6 +59,6 @@ dependencies {
 
     compile rootProject.ext.dependencies['umeng']
 
-    compile(name: 'SwipeBackLayout-1.0', ext: 'aar')
+    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
 
 }
