@@ -59,6 +59,7 @@ dependencies {
 
     compile rootProject.ext.dependencies['umeng']
 
-    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
+    //compile 'me.imid.swipebacklayout.lib:library:1.0.0'
+    compile 'com.github.xjh1994:SwipeBackLayout:1.0'
 
 }

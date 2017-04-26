@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.xjh1994.helloandroid.core">
+
+    <uses-sdk tools:overrideLibrary="com.gc.materialdesign" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -10,12 +13,12 @@
         android:allowBackup="true"
         android:supportsRtl="true">
 
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="56de7e5567e58e2c4e000c19" />
-        <meta-data
-            android:name="UMENG_CHANNEL"
-            android:value="HelloAndroid" />
+        <!--<meta-data-->
+            <!--android:name="UMENG_APPKEY"-->
+            <!--android:value="56de7e5567e58e2c4e000c19" />-->
+        <!--<meta-data-->
+            <!--android:name="UMENG_CHANNEL"-->
+            <!--android:value="HelloAndroid" />-->
 
     </application>
 
