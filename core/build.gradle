@@ -1,9 +1,4 @@
 apply plugin: 'com.android.library' 
-apply plugin: 'com.github.dcendents.android-maven'  
- 
-group='com.github.xjh1994'
-
-version="0.2.3"
 
 android {
 
@@ -66,13 +61,4 @@ dependencies {
 
     compile(name: 'SwipeBackLayout-1.0', ext: 'aar')
 
-}
-
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-artifacts {
-    archives sourcesJar
 }
