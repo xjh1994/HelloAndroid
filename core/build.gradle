@@ -2,6 +2,10 @@ apply plugin: 'com.android.library'
 
 android {
 
+    dataBinding {        
+        enabled = true    
+    }
+
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
     buildToolsVersion rootProject.ext.versions.buildToolsVersion
 
