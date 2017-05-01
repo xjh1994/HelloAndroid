@@ -246,7 +246,6 @@ public class TxPhotoHelper {
     }
 
     /**
-     *
      * @param activity
      * @param uri
      * @param requestCode
@@ -278,6 +277,10 @@ public class TxPhotoHelper {
      */
     public static void uploadAvatar(final Activity activity, Bitmap bitmap, int quality) {
         Uri uri = compressBitmap(activity, bitmap, quality);
+        Intent intent = new Intent();
+        intent.putExtra(EXTRA_RESULT, uri);
+        activity.setResult(Activity.RESULT_OK, intent);
+        activity.finish();
 //        TxUserManager.uploadAvatar(uri, new UpdateCallback<TxFile>(activity) {
 //
 //            @Override
@@ -300,12 +303,17 @@ public class TxPhotoHelper {
 
     /**
      * 上传文件
+     *
      * @param activity
      * @param bitmap
      * @param quality
      */
     public static void uploadFile(final Activity activity, Bitmap bitmap, int quality) {
         Uri uri = compressBitmap(activity, bitmap, quality);
+        Intent intent = new Intent();
+        intent.putExtra(EXTRA_RESULT, uri);
+        activity.setResult(Activity.RESULT_OK, intent);
+        activity.finish();
 //        TxFileManager.upload(uri, new SingleFileResponseCallback() {
 //            @Override
 //            public void onProgress(int progress, long total) {

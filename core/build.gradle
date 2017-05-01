@@ -66,6 +66,8 @@ dependencies {
     compile rootProject.ext.dependencies['materialedittext']
     compile rootProject.ext.dependencies['MaterialDesign']
 
+    compile rootProject.ext.dependencies["MultiImageSelector"]
+
     compile rootProject.ext.dependencies['umeng']
 
     //compile 'me.imid.swipebacklayout.lib:library:1.0.0'
