@@ -14,7 +14,7 @@ import com.nostra13.universalimageloader.core.display.CircleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-import com.tianxiabuyi.txutils.R;
+import com.xjh1994.helloandroid.core.R;
 
 import java.util.Collections;
 import java.util.LinkedList;

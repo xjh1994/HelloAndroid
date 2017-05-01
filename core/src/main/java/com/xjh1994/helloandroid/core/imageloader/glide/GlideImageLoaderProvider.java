@@ -4,10 +4,10 @@ import android.content.Context;
 
 import com.bumptech.glide.DrawableRequestBuilder;
 import com.bumptech.glide.Glide;
-import com.tianxiabuyi.txutils.TxImageLoader;
-import com.tianxiabuyi.txutils.imageloader.BaseImageLoaderProvider;
-import com.tianxiabuyi.txutils.imageloader.CommonImageLoader;
-import com.tianxiabuyi.txutils.util.NetUtils;
+import com.xjh1994.helloandroid.core.imageloader.BaseImageLoaderProvider;
+import com.xjh1994.helloandroid.core.imageloader.CommonImageLoader;
+import com.xjh1994.helloandroid.core.imageloader.XImageLoader;
+import com.xjh1994.helloandroid.core.util.NetUtils;
 
 /**
  * Created by xjh1994 on 2016/9/1.
@@ -17,7 +17,7 @@ public class GlideImageLoaderProvider extends BaseImageLoaderProvider {
 
     @Override
     public void loadImage(Context context, CommonImageLoader img) {
-        if (img.getStrategy() == TxImageLoader.LOAD_STRATEGY_ONLY_WIFI && !NetUtils.isWifi(context)) {
+        if (img.getStrategy() == XImageLoader.LOAD_STRATEGY_ONLY_WIFI && !NetUtils.isWifi(context)) {
             //只在WiFi下加载
             img.getImgView().setImageResource(img.getPlaceHolder());
             return;
