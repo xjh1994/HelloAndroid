@@ -47,6 +47,7 @@ ext {
                     "permission_processor"    : "com.github.hotchemi:permissionsdispatcher-processor:2.2.0",
                     "umeng"                   : "com.umeng.analytics:analytics:latest.integration",    //友盟 http://dev.umeng.com/analytics/android-doc/integration?spm=0.0.0.0.eqOhRs
                     "imageloader"             : "com.nostra13.universalimageloader:universal-image-loader:1.9.5", //UniversalImageLoader https://github.com/nostra13/Android-Universal-Image-Loader
+                    "EasyPermissions"         : "pub.devrel:easypermissions:0.2.1", //EasyPermissions https://github.com/googlesamples/easypermissions
     ]
 
     versions = [

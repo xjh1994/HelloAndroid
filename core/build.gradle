@@ -54,11 +54,13 @@ dependencies {
     compile rootProject.ext.dependencies['converter-rxjava']
     compile rootProject.ext.dependencies['rxbinding']
     compile rootProject.ext.dependencies['rx-preferences']
-    
+
     provided rootProject.ext.dependencies["imageloader"]
     provided rootProject.ext.dependencies["glide"]
 
     compile rootProject.ext.dependencies['FlycoTabLayout_Lib']
+    
+    compile rootProject.ext.dependencies["EasyPermissions"]
 
     compile rootProject.ext.dependencies['material-dialogs']
     compile rootProject.ext.dependencies['materialedittext']

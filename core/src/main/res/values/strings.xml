@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name_core">HelloAndroid Core</string>
+
+    <string name="tx_gallery">相册</string>
+    <string name="tx_take_photo">拍照</string>
+    <string name="tx_no_permission">没有权限</string>
+
+    <string name="tx_rationale_camera">程序需要相机权限进行拍照</string>
+    <string name="tx_rationale_gallery">程序需要SD卡读写权限选取照片</string>
+    <string name="tx_rationale_ask_again">没有权限本APP可能无法正常工作，出现问题请到设置中修改程序权限。</string>
+    <string name="tx_title_settings_dialog">需要权限</string>
+    <string name="tx_cancel">取消</string>
+    <string name="tx_setting">设置</string>
+    <string name="tx_returned_from_app_settings_to_activity">设置完毕</string>
 </resources>
