@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SettingItemView">
+
+        <attr name="sivBackground" format="reference" />
+
+        <attr name="sivTopLineEnabled" format="boolean" />
+        <attr name="sivBottomLineEnabled" format="boolean" />
+
+        <attr name="sivLeftIcon" format="reference" />
+        <attr name="sivLeftIconWidth" format="dimension" />
+        <attr name="sivLeftIconHeight" format="dimension" />
+
+        <attr name="sivLeftText" format="string|integer" />
+        <attr name="sivLeftTextSize" format="integer" />
+        <attr name="sivLeftTextColor" format="color" />
+
+        <attr name="sivLeftSubText" format="string|integer" />
+        <attr name="sivLeftSubTextSize" format="integer" />
+        <attr name="sivLeftSubTextColor" format="color" />
+
+        <attr name="sivRightText" format="string|integer" />
+        <attr name="sivRightTextSize" format="integer" />
+        <attr name="sivRightTextColor" format="color" />
+
+        <attr name="sivRightSubText" format="string|integer" />
+        <attr name="sivRightSubTextSize" format="integer" />
+        <attr name="sivRightSubTextColor" format="color" />
+
+        <attr name="sivRightIcon" format="reference" />
+        <attr name="sivRightIconWidth" format="dimension" />
+        <attr name="sivRightIconHeight" format="dimension" />
+
+        <attr name="sivArrowEnabled" format="boolean" />
+        <attr name="sivArrowIcon" format="reference" />
+
+    </declare-styleable>
+</resources>
