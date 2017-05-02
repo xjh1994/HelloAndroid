@@ -5,4 +5,11 @@
         <item name="android:windowEnterAnimation">@anim/share_bottom_in</item>
         <item name="android:windowExitAnimation">@anim/share_bottom_out</item>
     </style>
+
+    <style name="TxAppTranslucentTheme"  parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
 </resources>

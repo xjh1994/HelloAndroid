@@ -19,6 +19,10 @@
         <!--<meta-data-->
             <!--android:name="UMENG_CHANNEL"-->
             <!--android:value="HelloAndroid" />-->
+        <activity
+            android:name=".widget.avatar.TxPhotoHelperActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TxAppTranslucentTheme" />
 
     </application>
 

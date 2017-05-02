@@ -160,7 +160,7 @@ public class SettingItemView extends LinearLayout {
         mBottomLineEnabled = ta.getBoolean(R.styleable.SettingItemView_sivBottomLineEnabled, false);
 
         ivLeftIcon.setLayoutParams(new RelativeLayout.LayoutParams(mLeftIconWidth, mLeftIconHeight));
-        ivRightIcon.setLayoutParams(new RelativeLayout.LayoutParams(mRightIconWidth, mRightIconHeight));
+        ivRightIcon.setLayoutParams(new LinearLayout.LayoutParams(mRightIconWidth, mRightIconHeight));
 
         if (mBackgroundResId == 0) {
             setBg(getResources().getDrawable(R.drawable.tx_selector_bg_setting_item));
